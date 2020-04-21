@@ -1,0 +1,171 @@
+// :host {
+//     margin: 2px;
+//     border: 1px solid black;
+//     border-radius: 5px;
+//     display: block;
+//   }
+// .crop-image {
+//   height: 300px;
+//   width: 100%;
+//   overflow: hidden;
+//   position: relative;
+
+//   img {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     max-width: 100%;
+//   }
+// }
+.crop-image {
+  display: block;
+  height: 300px;
+  width: 100%;
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    cursor:pointer;
+    
+  }
+}
+.crop-image:hover {
+  background: rgba(0, 0, 0, 0);
+  transform:scale(1.2);
+  -ms-transform:scale(1.2); // IE 9 
+  -moz-transform:scale(1.2); // Firefox 
+  -webkit-transform:scale(1.2); // Safari and Chrome 
+  -o-transform:scale(1.2); 
+  cursor:pointer;
+   h4 {
+  
+    color: #14708d;
+    font-size: 24px;
+  }
+}
+  mat-card > div > div > mat-card-title{
+
+  margin-top: -9px;
+}
+p {
+   color:  #92999f;
+}
+a {
+  color: #14708d;
+} 
+mat-card > div > div > mat-card-title {
+  margin-top: -9px;
+  color: #14708d;
+}
+.col-6 {
+ 
+  flex: 5 0 50%;
+  max-width: 47%;
+}
+.mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child, .mat-card-actions .mat-stroked-button:first-child {
+  margin-left: 0;
+  margin-right: 0;
+  color: #EB8F72;
+  background-color: white;
+  font-size: 18px;
+  line-height: 45px;
+}
+.btn:hover {
+  color: #fff;
+  background-color: rgb(241, 235, 233);
+  
+  box-shadow: none;
+  transform:scale(1.2);
+  -ms-transform:scale(1.2); // IE 9 
+  -moz-transform:scale(1.2); // Firefox 
+  -webkit-transform:scale(1.2); // Safari and Chrome 
+  -o-transform:scale(1.2); 
+}
+.mas:hover {
+  color: #fff;
+
+}
+.btn2:hover {
+  color: #fff;
+  background-color: #F18B72;
+  box-shadow: none;
+  transform:scale(1.2);
+  -ms-transform:scale(1.2); // IE 9 
+  -moz-transform:scale(1.2); // Firefox 
+  -webkit-transform:scale(1.2); // Safari and Chrome 
+  -o-transform:scale(1.2); 
+}
+
+@media (min-width: 375px) {
+  mat-card > mat-card-actions > div > div > button:nth-child(2) {
+    font-size: 0.8rem;
+    padding-right: -0.25rem;
+    padding-left: 0.0px;
+  }
+}
+@media (min-width: 411px) {
+  mat-card > mat-card-actions > div > div > button:nth-child(2) {
+    font-size: 0.8rem;
+    padding-right: -0.25rem;
+    padding-left: 0.0px;
+  }
+  mat-card > mat-card-actions > div > div > button {
+    padding-left: 0px;
+    padding-right: 1px;
+  }
+  mat-card > mat-card-actions > div > div:nth-child(2) {
+    padding-left: 51px;
+  }
+   mat-card > mat-card-actions > div > div > button > i {
+    padding-right: 2px;
+  }
+  
+  
+ 
+
+}
+@media (min-width: 576px) {
+  mat-card > mat-card-actions > div > div > button:nth-child(2) {
+    font-size: 0.8rem;
+    padding-right: -0.25rem;
+    padding-left: 0.0px;
+  }
+   mat-card > mat-card-actions > div > div > a {
+    padding-right: 7px;
+    padding-left: 6px;
+    font-size: 15px;
+  }
+  mat-card >card-actions > div > div:nth-child(2) {
+    padding-right: 0px;
+   
+    padding-left: 32px;
+  }
+    mat-card > mat-card-actions > div > div > button {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+ 
+ mat-card > mat-card-actions > div > div > button {
+    padding-right: 0px;
+  }
+  mat-card > mat-card-actions > div > div:nth-child(2) {
+    padding-left: 33px;
+  }
+}
+@media (min-width: 992px) {
+    mat-card > mat-card-actions > div > div > a {
+    padding-right: 10px;
+    padding-left: 13px;
+    font-size: 19px;
+  }
+   mat-card > mat-card-actions > div > div > button:nth-child(3) > i:nth-child(1) {
+    padding-right: 5px;
+    padding-left: 6px;
+  }
+  
+   mat-card > mat-card-actions:nth-child(4) > div:nth-child(1) > div:nth-child(2) {
+    padding-left: 49px;
+  }
+}

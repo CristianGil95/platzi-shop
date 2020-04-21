@@ -1,0 +1,36 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { ProductsContainer } from './container/products/products.container';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { NavComponent } from './components/nav/nav.component';
+
+const routes: Routes = [
+    {
+        path: '',
+        component: NavComponent,
+        children: [
+            {
+                path: '',
+                component: ProductsContainer
+
+            },
+            {
+                path: ':id',
+                component: ProductDetailComponent
+            }
+        ]
+
+    }
+
+];
+
+@NgModule({
+    imports: [
+        RouterModule.forChild(routes, )
+
+    ],
+    exports: [
+        RouterModule
+    ]
+})
+export class ProductsRoutingModule {}

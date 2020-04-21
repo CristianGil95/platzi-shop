@@ -1,0 +1,22 @@
+<div class="thumb-wrapper"> 
+    <div class="img-box" >
+        <a [routerLink]="['/products',product.id]"> <img [src]="product.image" class="img-responsive img-fluid" alt=""></a>
+        
+    </div>
+    <div class="thumb-content">
+        <a  [routerLink]="['/products',product.id]"><h4 > {{ product.title | uppercase }}</h4> </a>
+        
+        <p class="item-price">
+            
+            <span>{{ product.price | currency:'EUR' }}</span>
+        </p>
+
+
+        
+
+        <button mat-button mat-stroked-button color="primary" (click)="add.emit(product)">
+            ADD TO CART
+        </button>
+
+    </div>
+</div>

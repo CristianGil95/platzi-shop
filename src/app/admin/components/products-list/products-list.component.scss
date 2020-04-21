@@ -1,0 +1,17 @@
+.products-table{
+    width: 96%;
+    margin: 2%;
+}
+nav > a {
+    padding: 5px;
+    text-decoration: none;
+}
+nav > a.active {
+    background-color: blue;
+}
+.header-row {
+    width: 100%;
+}
+tr.mat-row > td > button {
+    margin-left: 4px;
+  }

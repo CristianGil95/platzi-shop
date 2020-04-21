@@ -1,0 +1,8 @@
+<!-- 
+<input type="text" class="form-control mb-10" placeholder="Cerca prodotto" [(ngModel)]="search.searchTerm" /> -->
+
+<!-- <div class="form-group">
+    <input class="form-control mb-10" placeholder="Search..." [formControl]="searchControl">
+  </div> -->
+
+<input type="text" class="form-control mb-10" placeholder="Cerca prodotto" [(ngModel)]="progreso" (ngModelChange)="onchanges($event)" />

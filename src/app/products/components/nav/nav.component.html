@@ -1,0 +1,38 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar></mat-toolbar>
+        <mat-nav-list>
+            <app-search (cambioValor)="searchTerm = $event" cercare=""></app-search>
+            <a mat-list-item routerLink="/products">Uomo</a>
+            <a mat-list-item routerLink="/products">Donna</a>
+            <a mat-list-item routerLink="/products">Bambini</a>
+            <a mat-list-item routerLink="/products">Saldi</a>
+        </mat-nav-list>
+        <div class="menu_contact">
+            <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+
+                <div><i class="fas fa-phone-alt"></i> +39 333 230 2765</div>
+            </div>
+            <div class="menu_social">
+                <ul class="menu_social_list d-flex flex-row align-items-start justify-content-start">
+                    <a href="#"><i class="fab fa-whatsapp" style=" color: #25D366; "></i></a>
+                    <a href="#"><i class="fab fa-facebook" style=" color: #3b5998; "></i></a>
+                    <a href="#"><i class="far fa-envelope" style=" color: #ea3651; "></i></a>
+                </ul>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+            <h1>Catalogo</h1>
+
+        </mat-toolbar>
+        <!-- Add Content Here -->
+
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

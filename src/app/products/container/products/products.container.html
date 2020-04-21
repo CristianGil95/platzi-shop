@@ -1,0 +1,65 @@
+<div class="container">
+
+
+    <!-- <app-search></app-search>
+  <input placeholder="Cerca prodotto"  class="form-control mb-10"  [formControl]="search"> -->
+    <br>
+
+    <app-search (cambioValor)="searchTerm = $event" cercare=""></app-search>
+    <!-- <input type="text" class="form-control mb-10" placeholder="Cerca prodotto" [(ngModel)]="searchTerm" /> -->
+
+    <div class="product-grid" *ngIf="(products$ | async | search: searchTerm) as products">
+
+        <p *ngIf="products.length === 0">no hay productos</p>
+        <app-product [product]="product" *ngFor="let product of products  " (add)="addProductToCart($event)" (subtract)="subtract($event)">
+        </app-product>
+    </div>
+    <div class="flex items-center justify-center w-full" *ngIf="(isLoading$ | async ) as products">
+
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"></div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <ng-container *ngIf="!(loading$ | async); else loadingTpl">
+
+  <input placeholder="Search Product.." >
+  <app-search-product></app-search-product>
+  <app-product [product]="product" *ngFor="let product of products$ | async"
+  (add)="addProductToCart($event)"
+  (subtract)="subtract($event)"></app-product>
+
+</ng-container>
+
+<ng-template #loadingTpl>...</ng-template> -->
+
+<!-- <section class="flex">
+
+  
+
+  <ng-template #productsList>
+
+    <section class="flex-1">
+
+      <app-search-product></app-search-product>
+
+      <div class="products flex flex-wrap">
+
+        <app-product [product]="product" *ngFor="let product of products$ | async"
+        (add)="addProductToCart($event)"
+        (subtract)="subtract($event)"></app-product>
+        
+      </div>
+
+    </section>
+  </ng-template>
+
+
+  <div class="flex items-center justify-center w-full" *ngIf="isLoading$ | async; else productsList">
+      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;"></div>
+  </div>
+
+</section> -->

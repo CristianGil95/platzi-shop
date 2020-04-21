@@ -1,0 +1,161 @@
+<div class="container">
+<mat-horizontal-stepper>
+    <mat-step>
+        <ng-template matStepLabel> Sus productos </ng-template>
+        
+        
+
+          <div class="title">
+              My Cart
+          </div>
+
+            <br>
+            <!-- <section class="padding">
+                <ng-container *ngIf="items$ | async as items">
+                  <table class="striped" *ngIf="items.length">
+                    <thead>
+                      <tr>
+                        <th>imagen</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of items">
+                        <td><img [src]="item.image" alt="" width="250px;" height="270px;"> </td>
+                        <td>{{item.title | uppercase}}</td>
+                        <td>{{item.description}}</td>
+                        <th>{{item?.price}}$</th>
+                        <td>{{item.quantity}}</td>
+                        <th>{{item.total}}$</th>
+                        <th>
+                          <button (click)="remove(item)" class="btn waves-effect waves-light red">
+                            <i class="material-icons">delete_forever</i>
+                          </button>
+                        </th>
+                      </tr>
+                    </tbody>
+                  </table>
+              
+                  <h3 *ngIf="!items.length">Your cart is empty</h3>
+              
+                  <h4 *ngIf="items.length" class="flex align-center">
+                    <i class="material-icons medium mr5">credit_card</i>
+                    Total: {{total$ | async}}$
+                  </h4>
+              
+                </ng-container>
+              
+            </section> -->
+            <div class="example-container mat-elevation-z8"  *ngIf="items$ | async as items"  >
+                
+                <table mat-table [dataSource]="items$" >
+                                      <!-- Item Column -->
+                                    
+                  <ng-container matColumnDef="image">
+                    <th mat-header-cell *matHeaderCellDef> image </th>
+                    <td mat-cell *matCellDef="let item"> <img [src]="item.image" alt=""  height="150px;">  </td>
+                    <td mat-footer-cell *matFooterCellDef>  </td>
+                  </ng-container>
+                  <!-- Item Column -->
+                  <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef> title </th>
+                    <td mat-cell *matCellDef="let item"> {{item.title | uppercase}} </td>
+                    <td mat-footer-cell *matFooterCellDef> </td>
+                  </ng-container>
+              
+                  <!-- Cost Column -->
+                  <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef> price </th>
+                    <td mat-cell *matCellDef="let item"> {{item.price | currency:'EUR'}} </td>
+                    <td mat-footer-cell *matFooterCellDef>  <h6 *ngIf="items.length" ><i class="material-icons medium mr5">credit_card</i></h6> </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="quantity">
+                    <th mat-header-cell *matHeaderCellDef> quantity </th>
+                    <td mat-cell *matCellDef="let item"> 
+                      <!-- <button class="btn waves-effect waves-light cyan lighten-2 mr" (click)="addProductToCart(item)">
+                        <i class="material-icons">exposure_plus_1</i>
+                      </button>
+                      {{item.quantity}} 
+                      <button class="btn waves-effect waves-light blue-grey lighten-3" (click)="subtract(item)">
+                        <i class="material-icons">exposure_neg_1</i>
+                      </button> -->
+                      
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">                    
+                                <button class="btn waves-effect waves-light cyan lighten-2 mr mas" (click)="addProductToCart(item)">
+                                    <i class="fas fa-plus mas" style="color: #F18B72;" ></i>
+                                </button>
+                        </span>
+                        </div>
+                        <div class="custom-file"> 
+                            <button mat-button mat-stroked-button color="primary" class="button btn-lg btn-block">
+                              {{item.quantity}} 
+                            </button>
+                        </div>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">                    
+                                <button class="btn waves-effect waves-light cyan lighten-2 mr mas" (click)="subtract(item)">
+                                     <i class="fas fa-minus " style="color: #F18B72;"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    </td>
+
+
+                    <td mat-footer-cell *matFooterCellDef> 
+                       
+                        <h6 *ngIf="items.length" >Total</h6> </td>
+                  </ng-container>
+                  <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef> Total </th>
+                    <td mat-cell *matCellDef="let item"> {{item.total | currency:'EUR'}} </td>
+                    <td mat-footer-cell *matFooterCellDef> <h6 *ngIf="items.length" >{{total$ | async | currency:'EUR'}}</h6></td>
+                  </ng-container>
+                  <ng-container matColumnDef="eliminar">
+                    <th mat-header-cell *matHeaderCellDef> Remove</th>
+                    <td mat-cell *matCellDef="let item">                  
+                         <button (click)="remove(item)" class="btn waves-effect waves-light red">
+                        <i class="material-icons">delete_forever</i>
+                        </button>
+                    </td>
+                        
+                    <td mat-footer-cell *matFooterCellDef >
+                        <h6 *ngIf="items.length"> <button mat-button matStepperNext> Continuare </button> </h6>
+                       </td>
+                    
+                  </ng-container>
+
+
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+                </table>
+                <br><br>
+                <h4 *ngIf="!items.length">il tuo carrello è vuoto <a href="javascript: history.go(-1)">tornare indietro</a></h4> 
+              </div>
+
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel> Datos Personales </ng-template>
+        <h1>Contenido</h1>
+        <button mat-button matStepperNext>Next</button>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel> Pago </ng-template>
+        <h1>Contenido</h1>
+        <button mat-button matStepperNext>Next</button>
+    </mat-step>
+</mat-horizontal-stepper>
+</div>
+
+
+

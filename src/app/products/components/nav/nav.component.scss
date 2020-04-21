@@ -1,0 +1,90 @@
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+.sidenav {
+  display: block;
+  border-right-width: 0px;
+}
+
+.sidenav .mat-toolbar {
+  background: #555454;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-sidenav-fixed {
+  position: absolute;
+}
+.mat-primary {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.822);
+  text-align: center;
+  background: #555454;
+  padding-left: 31px;
+  padding-right: 31px;
+}
+
+.mat-primary > h1:nth-child(1) {
+  font-size: 23px;
+  line-height: 21px;
+  
+}
+
+.mat-drawer-inner-container {
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: red;
+
+}
+a.mat-list-item {
+  font-size: 24px;
+  
+}
+a.mat-list-item:hover {
+  background-color: #4a8ea3;
+  color:  #ffffff;
+}
+.mat-nav-list {
+  padding-top: 78px;
+  padding-left: 24px;
+	left: 40px;
+  bottom: 25px;
+  padding-top: 57px;
+  padding-left: 11px;
+}
+.menu_contact
+{
+	position: absolute;
+	
+  bottom: 25px;
+  left: 21px;
+}
+.menu_phone > div:first-child > div
+{
+	width: 18px;
+	height: 18px;
+}
+.menu_social_list > a> i {
+  font-size: 22px;
+  letter-spacing: 0.217em;
+}
+
+.mat-sidenav {
+  background-image: url(../../../../assets/images/rosas.png);
+  background-color: #ffffffc0;
+  
+  background-position: bottom;
+  background-repeat: no-repeat;
+}

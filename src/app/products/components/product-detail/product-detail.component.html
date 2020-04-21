@@ -1,0 +1,145 @@
+
+    <!-- <button (click)="createProduct()">Crear</button>
+    <button (click)="updateProduct()">Editar</button>
+    <button (click)="deleteProduct()">delete</button>
+    <button  (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button> -->
+<div id="top"></div>
+<div class="product_image_area section_padding">
+    <div class="container">
+        <div class="row s_product_inner" >
+            <div class="col-lg-5">
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let img of images">
+                        <img [src]="img" class="img-responsive img-fluid" alt="">
+                      </div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                  </div>
+                  <div class="swiper-container gallery-thumbs">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let img of images">
+                        <img [src]="img" class="img-responsive img-fluid" alt="">
+                      </div>
+                    </div>
+                    </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1" *ngIf="(product$ | async) as product;">
+                <div class="s_product_text">
+                    <h3>{{product.title | uppercase}}</h3>
+                    <h2>{{product.price | currency:'EUR'}}</h2>
+                    <ul class="list">
+
+                        <li>
+                          <a href="#"> <span>Availibility</span> : In Stock</a>
+                        </li>
+                    </ul>
+                    <p>
+                        {{product.description}}
+                    </p>
+                    <div class="card_area">
+                        <div class="button-group">
+                            <button mat-button mat-raised-button color="primary" class="buy-now-button space">BUY NOW
+                            </button>
+                         <br>
+ 
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">                    
+                                    <button class="btn waves-effect waves-light cyan lighten-2 mr mas" (click)="addProductToCart(product)">
+                                        <i class="fas fa-plus mas" style="color: #F18B72;" ></i>
+                                    </button>
+                            </span>
+                            </div>
+                            <div class="custom-file"> 
+                                <button mat-button mat-stroked-button color="primary" (click)="addProductToCart(product)" class="button btn-lg btn-block">
+                                    ADD TO CART
+                                </button>
+                            </div>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">                    
+                                    <button class="btn waves-effect waves-light cyan lighten-2 mr mas" (click)="subtract(product)">
+                                         <i class="fas fa-minus " style="color: #F18B72;"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="social_icon">
+                            <a href="#" class="fb"><i class="ti-facebook"></i></a>
+                            <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
+                            <a href="#" class="li"><i class="ti-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="description-tabs">
+    <mat-tab-group>
+        <mat-tab label="Dettagli prodotto">
+            <h2 style="font-weight: 400;">Specifiche prodotto</h2>
+            <div class="description"> On her way she met a copy. The copy warned the Little Blind Text, that where it
+                came from it would have
+                been rewritten a thousand times and everything that was left from its origin would be the word "and" and
+
+            </div>
+        </mat-tab>
+        <mat-tab label="Descrizione prodotto">
+            <h2 style="font-weight: 400;">Descrizione</h2>
+            <div class="description"> On her way she met a copy. The copy warned the Little Blind Text, that where it
+                came from it would have been
+                rewritten a thousand times and everything that was left from its 
+            </div>
+        </mat-tab>
+        <mat-tab label="Recensioni clienti">
+            <h2 style="font-weight: 400;">23 Reviews</h2>
+            <div class="flex-box-transparent message-box" style="padding: 0; margin-top: 5px;">
+
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<div class="mobile-view">
+    <div class="title">
+        Similar Products
+        <button mat-button mat-raised-button color="primary" class="viewAllBtn">
+            View All
+        </button>
+    </div>
+        
+    
+        <div class="swiper-container s2">
+            <div class="swiper-wrapper s22">
+                <div class="swiper-slide s22" 
+                *ngFor="let product of simillarProducts">
+       
+                <app-products-similar 
+                (add)="addProductToCart($event)"
+                
+                [product]="product"></app-products-similar>
+        
+                    
+                </div>
+            </div>
+        
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next carousel-control"></div>
+            <div class="swiper-button-prev carousel-control"></div>
+        </div> 
+        
+        <button mat-button mat-stroked-button color="primary" (click)="getRandomUsers()" class="button">
+            users
+        </button>
+        <div *ngFor="let usert of user">
+            <h2>{{usert.gender}}</h2>
+            <h2>{{usert.email}}</h2>
+            <h2>{{usert.phone}}</h2>
+        </div>
+</div>

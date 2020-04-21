@@ -1,0 +1,51 @@
+
+
+<ul class="nav justify-content-end">
+
+    <li class="nav-item">
+        <a  routerLink="/order" mat-raised-button [matBadge]=" count$ | async " matBadgeColor="warn" >
+            <span class="sr-only">(current)</span>
+            <mat-icon>shopping_cart</mat-icon>
+            Cart
+          </a>
+
+    </li>
+
+  </ul>
+
+<nav class="navbar navbar-expand-lg  nav-fill navbar-light ">
+    <a class="navbar-brand" routerLink="/home">
+        <img class="image" src="../../../../assets/images/logodiGiuusy.jpg" alt="">
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse"  id="navbarSupportedContent" aria-labelledby="navbarDropdown">
+      <ul class="navbar-nav mr-auto"  >
+        <li class="nav-item" >
+          <a class="nav-link "   routerLink="/home" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active">Chi Siamo <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+            Catalogo
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/products" routerLinkActive="active">Uomo</a>
+            <a class="dropdown-item"  routerLinkActive="active">Donna</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLinkActive="active">SALDI</a>
+          </div>
+        </li>
+        
+      </ul>
+      
+    </div>
+
+  </nav>
+
+

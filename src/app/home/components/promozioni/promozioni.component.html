@@ -1,0 +1,21 @@
+<div class="container">      
+    <h2>Prodotti in <b>Promozioni</b></h2>
+    <div class="swiper-container s2">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let product of products$ | async">
+            <app-promozion 
+            (add)="addProductToCart($event)" 
+            [product]="product"></app-promozion>
+        </div>
+    </div>
+        <div class="swiper-pagination puntos" ></div>
+        <div class="swiper-button-next carousel-control"></div>
+        <div class="swiper-button-prev carousel-control"></div>
+    </div> 
+    
+</div>
+
+
+
+
+

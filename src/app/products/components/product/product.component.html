@@ -1,0 +1,67 @@
+<br>
+
+    <mat-card>
+
+        <div class="crop-image">
+            <a [routerLink]="['/products',product.id]"><img [src]="product.image" alt=""></a>
+            
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+
+                <mat-card-title>
+                    <a [routerLink]="['/products',product.id]">{{ product.title | uppercase }}</a>
+                </mat-card-title>
+            </div>
+            <div class="col">
+
+            </div>
+            <div class="w-100"></div>
+            <div class="col description">
+               
+                <mat-card-subtitle>
+                    <p>{{ product.description | slice:0:10 }}</p>
+                </mat-card-subtitle> 
+            </div>
+            <div class="col">
+                <mat-card-title>
+                    <a [routerLink]="['/products',product.id]"> {{ product.price | currency:'EUR' }} </a>
+                    
+                </mat-card-title>
+            </div>
+          </div>
+
+        <mat-card-actions>
+            <div class="row">
+                <div class="col-6">
+                    
+                    <a mat-raised-button color="primary" class="btn2" [routerLink]="['/products',product.id]">vedi i  dettagli</a>
+                </div>
+                <div class="col-6">
+                    <button class="btn waves-effect waves-light cyan lighten-2 mr mas" (click)="add.emit(product)">
+                        <i class="fas fa-plus mas" style="color: #F18B72;" ></i>
+                      </button>
+                      <button class="btn waves-effect waves-light cyan lighten-2 mr" (click)="add.emit(product)">
+                        <i class="fas fa-shopping-cart" style="font-size: 2em; color: rgb(247, 193, 176);"></i>
+                        
+                      </button>
+                      
+                      <button class="btn waves-effect waves-light blue-grey lighten-3 menos" (click)="subtract.emit(product)">
+                        <i class="fas fa-minus " style="color: #F18B72;"></i>
+                      </button>
+                </div>
+              </div>
+
+         
+        </mat-card-actions>
+    </mat-card>  
+
+
+<!-- <h3 appHighlight>{{product.title | uppercase}}</h3>
+<img [src]="product.image" alt="">
+<strong> {{product.price | currency:'EUR'}}</strong>
+<p>{{product.description | slice:0:10}}</p>
+<p>{{today | date:'HH:mm'}}</p> -->
+
+

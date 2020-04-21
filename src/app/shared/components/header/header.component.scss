@@ -1,0 +1,93 @@
+
+nav > a.active {
+    background-color: #14708d;
+}
+nav > a.active:hover {
+  background-color: #14708d;
+}
+.header-row {
+    width: 100%;
+}
+.mat-toolbar-row {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .img {
+    width: 30px;
+    height: 30px;
+  }
+  .mat-toolbar {
+    padding-bottom: 13px;
+    padding-top: 17px;
+    padding-left: 11px;
+    padding-right: 8px;
+    background-color: white;
+  }
+
+  .nav {
+    margin-top: 0px;
+    padding-top: 6px;
+    padding-right: 18px;
+  }
+
+  .navbar {
+    padding-top: 0.5rem;
+    top: 0px;
+    margin-bottom: -7px;
+  }
+
+  .image {
+    padding-top: -2px;
+    margin-top: -43px;
+  }
+
+  .mat-badge {
+    margin-top: 7px;
+    margin-right: 16px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #363636;
+}
+  @media (min-width: 374px) {
+    li.nav-item > a {
+        font-size: 12px;
+        font-family: 'Open Sans', ;
+    }
+    .mat-badge {
+        margin-top: 9px;
+        margin-right: -5px;
+    }
+    }
+    @media (min-width: 768px) {
+        li.nav-item > a {
+            font-size: 24px;
+            font-family: 'Open Sans', ;
+          
+        }
+        .nav > li:nth-child(1) {
+            padding-right: 14px;
+            padding-top: 6px;
+          }
+    }
+    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+        
+        background-color: white;
+        color: #EB8F72;
+    }
+    .dropdown-item.active, .dropdown-item:active {
+        color: #14708d;;
+        text-decoration: none;
+        background-color: white
+    }
+    .dropdown-menu{
+        border: 2px solid #e7e2e2;
+        border-radius: 10px;
+    }
+    #mat-badge-content-0 {
+      background-color: #14708d;
+      color: white;
+    }
+    a:hover {
+      color: #14708d;
+      
+  }
